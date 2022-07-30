@@ -7,27 +7,10 @@ public class LocationMap implements Map<Integer, Location> {
     private static final String LOCATIONS_FILE_NAME =  "locations.txt";
     private static final String DIRECTIONS_FILE_NAME =  "directions.txt";
 
-    /** TODO
-     * create a static locations HashMap
-     */
     static Map<Integer, Location> locationHashMap = new HashMap<>();
     static {
-        /** TODO
-         * create a FileLogger object
-         */
         FileLogger fileLogger = new FileLogger();
-        /** TODO
-         * create a ConsoleLogger object
-         */
         ConsoleLogger consoleLogger = new ConsoleLogger();
-        /** TODO
-         * Read from LOCATIONS_FILE_NAME so that a user can navigate from one location to another
-         * use try-with-resources/catch block for the FileReader
-         * extract the location and the description on each line
-         * print all locations and descriptions to both console and file
-         * check the ExpectedOutput files
-         * put the location and a new Location object in the locations HashMap, using temporary empty hashmaps for exits
-         */
         String workingDir = System.getProperty("user.dir");
         File locationFile = new File(workingDir + File.separator + LOCATIONS_FILE_NAME);
 
@@ -48,14 +31,6 @@ public class LocationMap implements Map<Integer, Location> {
             e.printStackTrace();
         }
 
-        /**TODO
-         * Read from DIRECTIONS_FILE_NAME so that a user can move from A to B, i.e. current location to next location
-         * use try-with-resources/catch block for the FileReader
-         * extract the 3 elements  on each line: location, direction, destination
-         * print all locations, directions and destinations to both console and file
-         * check the ExpectedOutput files
-         * add the exits for each location
-         */
         File directionsFile = new File(workingDir + File.separator + DIRECTIONS_FILE_NAME);
         try(BufferedReader br = new BufferedReader(new FileReader(directionsFile))) {
             System.out.println("Available directions:");
@@ -85,13 +60,6 @@ public class LocationMap implements Map<Integer, Location> {
         }
     }
 
-
-
-
-    /**TODO
-     * implement all methods for Map
-     * @return
-     */
     @Override
     public int size() {
         //TODO

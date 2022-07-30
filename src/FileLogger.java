@@ -13,7 +13,6 @@ public class FileLogger implements Logger {
             output.close();
         } catch (SecurityException securityException) {
             System.out.println("Write permission denied!");
-            //} catch (FileNotFoundException fileNotFoundException) {
             System.out.println("There was an error opening the file.");
         } catch (IOException e) {
             e.printStackTrace();
@@ -24,12 +23,6 @@ public class FileLogger implements Logger {
 
     @Override
     public void log (String message) {
-        /** TODO
-         * create a new FileWriter in append mode
-         * write the message to file
-         * check the ExpectedOutput files
-         * use try-with-resources/catch block
-         */
         try {
             // Open given file in append mode by creating an
             FileWriter out = new FileWriter(file, true);
